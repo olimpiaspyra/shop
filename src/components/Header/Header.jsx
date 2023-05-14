@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {Navbar, Container, Form, Dropdown, Nav, Badge} from 'react-bootstrap';
 import {FaShoppingCart} from 'react-icons/fa';
 
@@ -9,9 +10,9 @@ const Header = () => {
     <Navbar bg='dark' variant='dark' style={{height: 80}}>
       <Container>
         <Navbar.Brand>
-          <a href='/' className='nav-link'>
+          <Link to='/' className='nav-link'>
             Shopping Cart
-          </a>
+          </Link>
         </Navbar.Brand>
         <Navbar.Text>
           <Form.Control
