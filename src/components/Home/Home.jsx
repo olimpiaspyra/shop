@@ -2,6 +2,7 @@ import React from 'react';
 
 import {CartState} from '../../context/Context';
 import SingleProduct from '../SingleProduct/SingleProduct';
+import Filters from '../Filters/Filters';
 
 import './Home.scss';
 
@@ -13,7 +14,7 @@ const Home = () => {
   console.log(products);
   return (
     <div className='home'>
-      Home
+      <Filters />
       <div className='productContainer'>
         {products.map(prod => {
           return <SingleProduct key={prod.id} prod={prod} />;
