@@ -7,8 +7,7 @@
     "build": "webpack --mode=production",
     "dev:watch": "yarn run start -o --watch",
     "refactor:format": "prettier --write \"src/**/*.{js,jsx,html,scss}\"",
-    "refactor:lint": "eslint --fix \"src/**/*.{js,jsx}\"",
-    "prepare": "husky install"
+    "refactor:lint": "eslint --fix \"src/**/*.{js,jsx}\""
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [

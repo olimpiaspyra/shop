@@ -13,7 +13,7 @@ const Filters = () => {
       <span className='title'>Filter Products </span>
       <Form>
         <Form.Check
-          style={{padding: 5}}
+          className='p-2'
           inline
           type='radio'
           label='Ascending'
@@ -21,7 +21,7 @@ const Filters = () => {
           id={`inline-1`}
         />
         <Form.Check
-          style={{padding: 5}}
+          className='p-2'
           inline
           type='radio'
           label='Descending'
@@ -29,7 +29,7 @@ const Filters = () => {
           id={`inline-2`}
         />
         <Form.Check
-          style={{padding: 5}}
+          className='p-2'
           inline
           type='checkbox'
           label='Include Out of Stock'
@@ -37,7 +37,7 @@ const Filters = () => {
           id={`inline-3`}
         />
         <Form.Check
-          style={{padding: 5}}
+          className='p-2'
           inline
           type='checkbox'
           label='Fast Delivery Only'
@@ -45,14 +45,14 @@ const Filters = () => {
           id={`inline-4`}
         />
         <div className='rating'>
-          <label style={{padding: 10}}>Rating</label>
+          <label className='p-2'>Rating</label>
           <Rating
             rating={rate}
             onClick={i => setRate(++i)}
             style={{cursor: 'pointer', padding: 3}}
           />
         </div>
-        <Button style={{fontSize: 12}} variant='light'>
+        <Button size='lg' variant='light'>
           Clear Filters
         </Button>
       </Form>
