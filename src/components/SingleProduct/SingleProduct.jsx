@@ -1,8 +1,30 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
+import {Card, Button} from 'react-bootstrap';
+
+import Rating from '../Rating/Rating';
 
 const SingleProduct = ({prod}) => {
-  return <div>{prod.name}</div>;
+  return (
+    <div className='products' style={{width: '30%', margin: 10}}>
+      <Card>
+        <Card.Img variant='top' src={prod.image} alt={prod.name} />
+        <Card.Body>
+          <Card.Title style={{fontSize: 20}}>{prod.name}</Card.Title>
+          <Card.Subtitle style={{paddingBottom: 10, fontSize: 15}}>
+            <span> $ {prod.price.split('.')[0]}</span>
+            {/* <span>{prod.price.replace(/\.00$/, '')}</span> */}
+            {prod.fastDelivery ? <div>Fast Delivery</div> : <div>4 days delivery</div>}
+            <Rating className='py-5' rating={prod.ratings} />
+          </Card.Subtitle>
+          <Button variant='danger'>Remove from cart</Button>
+          <Button disabled={!prod.inStock}>
+            {!prod.inStock ? 'Out of stock' : 'Add to cart'}
+          </Button>
+        </Card.Body>
+      </Card>
+    </div>
+  );
 };
 
 SingleProduct.propTypes = {
