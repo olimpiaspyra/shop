@@ -6,3 +6,26 @@
 a.nav-link:hover {
   color: #fff;
 }
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+  margin-bottom: 20px;
+}
+
+.cartItemImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cartItemDetail {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 20px;
+  font-size: 1.2rem;
+}
