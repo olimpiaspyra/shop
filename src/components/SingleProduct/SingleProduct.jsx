@@ -25,7 +25,7 @@ const SingleProduct = ({prod}) => {
             {prod.fastDelivery ? <div>Fast Delivery</div> : <div>4 days delivery</div>}
             <Rating className='py-5' rating={prod.ratings} />
           </Card.Subtitle>
-          {cart.some((p) => p.id === prod.id) ? (
+          {cart.some(p => p.id === prod.id) ? (
             <Button
               onClick={() => {
                 dispatch({
