@@ -35,7 +35,19 @@ const Cart = () => {
                   <Rating rating={prod.ratings} />
                 </Col>
                 <Col>
-                  <Form.Control as='select' value={prod.qty}>
+                  <Form.Control
+                    as='select'
+                    value={prod.qty}
+                    onChange={e => {
+                      return dispatch({
+                        type: 'CHANGE_CART_QTY',
+                        payload: {
+                          id: prod.id,
+                          qty: e.target.value,
+                        },
+                      });
+                    }}
+                  >
                     {[...Array(prod.inStock).keys()].map(x => (
                       <option key={x + 1}>{x + 1}</option>
                     ))}
@@ -58,9 +70,10 @@ const Cart = () => {
           ))}
         </ListGroup>
       </div>
-      <div className='filtersSummary' style={{width: '30%'}}>
+      <div className='filters summary' style={{width: '30%'}}>
+        <span className='title'>Subtotal ({cart.length}) items</span>
         <span style={{fontWeight: 700, fontSize: 20}}>Total: $ {total}</span>
-        <Button type='button' disabled={cart.length === 0}>
+        <Button type='button' style={{margin: '10px 0'}} disabled={cart.length === 0}>
           Proceed to Checkout
         </Button>
       </div>
